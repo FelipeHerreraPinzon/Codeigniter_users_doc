@@ -16,6 +16,9 @@
       }
      ?>
   <div class="row mt-3">
+   <div class=col-12>
+
+   
      <table class="table table-bordered" id="users">
        <thead>
           <tr>
@@ -34,12 +37,13 @@
              <td><?php echo $user['email']; ?></td>
              <td>
               <a href="<?php echo base_url('/users/edit/'.$user['id']);?>" class="btn btn-success">Edit</a>
-              <a href="<?php echo base_url('/users/delete/'.$user['id']);?>" class="btn btn-danger">Delete</a>
+              <a href="<?php echo base_url('/users/delete/'.$user['id']);?>" class="btn btn-danger" onclick="return confirm('¿ Seguro que desea eliminar este registro ?')">Delete</a>
               </td>
           </tr>
          <?php endforeach; ?>
          <?php endif; ?>
        </tbody>
+       </div>
      </table>
   </div>
 </div>
